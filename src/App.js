@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from '@react-three/drei';
+import Sun from "./Components/Sun";
+import Lights from "./Components/Lights";
+import Planet from "./Components/Planet";
+import planetData from "./PlanetsData";
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Canvas camera={{ position: [0, 20, 45], fov: 45 }}>
+      <Sun />
+      {planetData.map((planet) => (
+        <Planet planet={planet} key={planet.id} />
+      ))}
+      <Lights />
+      <OrbitControls />
+    </Canvas>
   );
 }
-
-export default App;
