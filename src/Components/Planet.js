@@ -1,12 +1,12 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import React from "react";
 import * as THREE from "three";
 
-export default function Planet({ planet: { color, xRadius, zRadius, size, speed, offset, rotationSpeed  } }) {
-
-
+export default function Planet({ planet: { color, xRadius, zRadius, size, speed, offset, rotationSpeed, textureMap  } }) {
 
   const planetRef = React.useRef();
+
+  const texture = useLoader(THREE.TextureLoader, textureMap);
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime() * speed + offset;
@@ -21,7 +21,7 @@ export default function Planet({ planet: { color, xRadius, zRadius, size, speed,
     <>
       <mesh ref={planetRef}>
         <sphereGeometry args={[size, 32, 32]} />
-        <meshStandardMaterial color={color} />
+        <meshStandardMaterial map={texture} />
       </mesh>
       <Ecliptic xRadius={xRadius} zRadius={zRadius} />
     </>
@@ -40,7 +40,7 @@ function Ecliptic({ xRadius = 1, zRadius = 1 }) {
   const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
   return (
     <line geometry={lineGeometry}>
-      <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
+      <lineBasicMaterial attach="material" color="#303030" linewidth={0.5} />
     </line>
   );
 }
