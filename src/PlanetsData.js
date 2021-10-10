@@ -1,12 +1,12 @@
-import MercuryMap from "./Textures/mercury.jpg";
-import VenusMap from "./Textures/venus_surface.jpg";
+import MercuryMap from "./Textures/Mercury.jpg";
+import VenusMap from "./Textures/Venus.jpg";
 import EarthMap from "./Textures/Earth.jpg";
 import EarthCloudsMap from "./Textures/EarthClouds.jpg";
-import MarsMap from "./Textures/mars.jpg";
-import JupiterMap from "./Textures/jupiter.jpg";
-import SaturnMap from "./Textures/saturn.jpg";
-import UranusMap from "./Textures/uranus.jpg";
-import NeptuneMap from "./Textures/neptune.jpg";
+import MarsMap from "./Textures/Mars.jpg";
+import JupiterMap from "./Textures/Jupiter.jpg";
+import SaturnMap from "./Textures/Saturn.jpg";
+import UranusMap from "./Textures/Uranus.jpg";
+import NeptuneMap from "./Textures/Neptune.jpg";
 
 const random = (a, b) => a + Math.random() * b;
 
@@ -26,13 +26,14 @@ const totalPlanets = 8;
 for (let index = 0; index < totalPlanets; index++) {
   planetData.push({
     id: index,
-    xRadius: (index + 1.5) * 4,
-    zRadius: (index + 1.5) * 2,
+    xRadius: (index + 1) * 12,
+    zRadius: (index + 1) * 6,
     size: random(0.5, 1),
     speed: random(0.5, 0.2),
-    offset: random(0, Math.PI * 2),
-    rotationSpeed: random(0.01, 0.03),
+    offset: (index + 1.5) * 4,
+    rotationSpeed: random(0.005, 0.015),
     textureMap: textures[index],
+    zoomed: false,
   });
 }
 
