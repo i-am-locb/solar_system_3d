@@ -24,17 +24,26 @@ const textures = [
 const planetData = [];
 const totalPlanets = 8;
 for (let index = 0; index < totalPlanets; index++) {
-  planetData.push({
-    id: index,
-    xRadius: (index + 1) * 12,
-    zRadius: (index + 1) * 6,
-    size: random(0.5, 1),
-    speed: random(0.5, 0.2),
-    offset: (index + 1.5) * 4,
-    rotationSpeed: random(0.005, 0.015),
-    textureMap: textures[index],
-    zoomed: false,
-  });
-}
+  planetData.push(
+     {
+      id: index,
+      xRadius: (index + 1) * 12,
+      zRadius: (index + 1) * 6,
+      size: random(0.5, 1),
+      speed: random(0.1, 0.04),
+      offset: (index + 1.5) * 8,
+      rotationSpeed: random(0.005, 0.015),
+      textureMap: textures[index],
+      zoomed: false,
+      toggleZoom() {
+        if (!this.data.zoomed) {
+          this.zoomed = true;
+        } else {
+          this.zoomed = false;
+        }
+      }, 
+    },
+  ) 
+};
 
 export default planetData;

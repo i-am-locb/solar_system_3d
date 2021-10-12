@@ -4,7 +4,6 @@ import * as THREE from "three";
 
 export default function Planet({
   planet: {
-    color,
     xRadius,
     zRadius,
     size,
@@ -13,15 +12,15 @@ export default function Planet({
     rotationSpeed,
     textureMap,
     zoomed,
+    toggleZoom,
   },
 }) {
-
-
   const planetRef = React.useRef();
 
   const texture = useLoader(THREE.TextureLoader, textureMap);
 
   useFrame(({ clock, camera }) => {
+    // debugger
     const tPlanet = clock.getElapsedTime() * speed + offset;
     const xPlanet = xRadius * Math.sin(tPlanet);
     const zPlanet = zRadius * Math.cos(tPlanet);
@@ -39,16 +38,16 @@ export default function Planet({
 
   function onClick() {
     if (zoomed) {
-      zoomed = false
+      zoomed = false;
     } else {
       zoomed = true;
     }
-  };
+  }
 
   return (
     <>
-      <mesh ref={planetRef} onClick={() => {onClick()}}>
-        <sphereGeometry args={[size, 32, 32]} />
+      <mesh ref={planetRef} onClick={onClick}>
+        <sphereGeometry args={[size, 100, 100]} />
         <meshStandardMaterial map={texture} />
       </mesh>
       <Ecliptic xRadius={xRadius} zRadius={zRadius} />

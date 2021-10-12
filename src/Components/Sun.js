@@ -2,7 +2,7 @@ import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import React from "react";
 
-import sunMap from '../Textures/sun.jpg'
+import sunMap from '../Textures/Sun.jpg'
 
 export default function Sun() {
 
