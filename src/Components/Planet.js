@@ -20,7 +20,7 @@ export default function Planet({
   const texture = useLoader(THREE.TextureLoader, textureMap);
 
   useFrame(({ clock, camera }) => {
-    // debugger
+    // console.log(camera)
     const tPlanet = clock.getElapsedTime() * speed + offset;
     const xPlanet = xRadius * Math.sin(tPlanet);
     const zPlanet = zRadius * Math.cos(tPlanet);
@@ -29,9 +29,9 @@ export default function Planet({
     planetRef.current.rotation.y += rotationSpeed;
 
     if (zoomed) {
-      const xCamera = xPlanet - 2;
-      const zCamera = zPlanet - 2;
-      camera.position.set(xCamera, 0, zCamera);
+      const xCamera = xPlanet + size + 1;
+      const zCamera = zPlanet + size + 1;
+      camera.position.lerp(new THREE.Vector3(xCamera, 0.4, zCamera), 0.1);
       camera.lookAt(xPlanet, 0, zPlanet);
     }
   });

@@ -12,7 +12,8 @@ import Warning from "./Components/Warning";
 
 export default function App(props) {
   let x = props.store.getState()
-  console.log(props)
+  console.log(x)
+
   if (!x.confirmed.isConfirm) {
     return (
       <Warning store={props.store}/>
@@ -23,9 +24,12 @@ export default function App(props) {
         <Suspense fallback={null}> 
           <Sun />
           <StarSky />
-          {planetData.map((planet) => (
+          {
+            x.planets.map((planet) => (
             <Planet planet={planet} key={planet.id} />
-          ))}
+          ))
+          }
+          {/* <Planet planet={x.planets[0]} key={x.planets[0].id}/> */}
           <Lights />
           <OrbitControls />
         </Suspense>

@@ -11,6 +11,8 @@ import { planetsAPI } from "../API/API_SolarSystem";
 
 const random = (a, b) => a + Math.random() * b;
 
+const initialState = [];
+
 const textures = [
   MercuryMap,
   VenusMap,
@@ -22,27 +24,19 @@ const textures = [
   NeptuneMap,
 ];
 
-const initialState = [];
-const totalPlanets = 8;
-for (let index = 0; index < totalPlanets; index++) {
-  initialState.push({
-    id: index,
-    xRadius: (index + 1) * 12,
-    zRadius: (index + 1) * 6,
-    size: random(0.5, 1),
-    speed: random(0.1, 0.04),
-    offset: (index + 1.5) * 8,
-    rotationSpeed: random(0.005, 0.015),
-    textureMap: textures[index],
-    zoomed: false,
-    toggleZoom() {
-      if (!this.data.zoomed) {
-        this.zoomed = true;
-      } else {
-        this.zoomed = false;
-      }
-    },
-  });
+let planetScale = 100000; // 100000
+let orbitScale = 50000000;
+
+function planet(planet) {
+  this.id = planet.name;
+  this.zRadius = (planet.perihelion / orbitScale) + 0.696342;
+  this.xRadius = (planet.aphelion / orbitScale) + 0.696342;
+  this.size = planet.equaRadius / planetScale;
+  this.rotationSpeed = random(0.005, 0.015) // planet.sideralRotation / 5000;
+  this.speed = random(0.1, 0.04);
+  this.zoomed = false;
+  this.offset = random(0.005, 0.015);
+  this.axialTilt = planet.axialTilt; // Угол наклона оси
 }
 
 const planetsReducer = (state = initialState, action) => {
@@ -53,10 +47,22 @@ const planetsReducer = (state = initialState, action) => {
 };
 
 export default planetsReducer;
-export const getPlanets = () => (dispatch) => {
+
+// => (dispatch)
+
+
+export const getPlanets = () => {
   planetsAPI.getPlanets().then((response) => {
-    //   if (response.status === 200) {
-    console.log(response);
-    //   }
+    for (let i = 0; i < response.data.bodies.length; i++) {
+      let x = new planet(response.data.bodies[i]);
+      initialState.push(x);
+    }
+    initialState.sort((prev, next) => prev.zRadius - next.zRadius);
+    for (let i = 0; i < initialState.length; i++) {
+      initialState[i].textureMap = textures[i];
+    }
   });
 };
+
+getPlanets();
+
