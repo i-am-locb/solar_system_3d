@@ -1,12 +1,10 @@
-const TOGGLE_CONFIRM = "TOGGLE_CONFIRM";
-
 let initialState = {
   isConfirm: false,
 };
 
 const confirmReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TOGGLE_CONFIRM: {
+    case "TOGGLE_CONFIRM": {
         return {
             ...state,
             isConfirm: action.isConfirm
@@ -19,5 +17,4 @@ const confirmReducer = (state = initialState, action) => {
 };
 
 export default confirmReducer
-export const toggleConfirm = () => ({type: TOGGLE_CONFIRM, isConfirm: true})
 

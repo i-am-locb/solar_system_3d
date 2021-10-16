@@ -1,11 +1,11 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
-import confirmReducer from "./confirm_reducer";
-import planetsReducer from "./planets_reducer";
+import confirmReducer from "./Confirm/confirm_reducer";
 import thunkMiddleware from 'redux-thunk'
+import solarSystemDataReducer from "./Planets/planets_reducer";
 
 
 let reducers = combineReducers({
-  planets: planetsReducer,
+  solarSystemData: solarSystemDataReducer,
   confirmed: confirmReducer
 });
 
