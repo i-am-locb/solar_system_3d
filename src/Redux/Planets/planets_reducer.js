@@ -15,16 +15,30 @@ const initialState = {
 
 const solarSystemDataReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_PLANETS": {
+    // case "SET_PLANETS": {
+    //   return {
+    //     ...state,
+    //     planets: [
+    //       ...action.planets.map((p) => {
+    //         return {
+    //           ...p,
+    //           zoomed: false,
+    //         };
+    //       }),
+    //     ],
+    //   };
+    // }
+    case "ADD_PLANET": {
       return {
         ...state,
         planets: [
-          ...action.planets.map((p) => {
-            return {
-              ...p,
-              zoomed: false,
-            };
-          }),
+          ...state.planets,
+          {
+            ...action.planet,
+            speed: action.speed,
+            offset: action.offset,
+            rotationSpeed: action.rotationSpeed,
+          },
         ],
       };
     }
@@ -46,7 +60,7 @@ const solarSystemDataReducer = (state = initialState, action) => {
         ...state,
         planets: [
           ...state.planets.map((p) => {
-            if ((p.englishName == action.name)) {
+            if (p.englishName === action.name) {
               return {
                 ...p,
                 zoomed: true,

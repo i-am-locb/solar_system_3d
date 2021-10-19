@@ -1,0 +1,35 @@
+.bar {
+  background-color: #414a4c;
+  width: 500px;
+  height: auto;
+  max-height: 98%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin-bottom: 10px;
+  opacity: 0.3;
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -ms-overflow-scrolling: touch;
+  -o-overflow-scrolling: touch;
+}
+
+.infoBar {
+  color: white;
+  font-size: 13px;
+  padding: 0 20px 0 10px;
+}
+
+.bar::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+.bar::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
