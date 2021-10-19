@@ -5,7 +5,7 @@ import Sun from "./Components/Sun";
 import Lights from "./Components/Lights";
 import Planet from "./Components/Planet/Planet";
 import StarSky from "./Components/Stars";
-import Warning from "./Components/Warning";
+import Warning from "./Components/Warning/Warning";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import store from "./Redux/Store";
 import Navigation from "./Components/Navigation/Navigation";
@@ -24,21 +24,26 @@ export default function App(props) {
   if (isConfirm) {
     return (
       <>
-      <Canvas camera={{ position: [0, 20, 45], fov: 45 }}>
-        <Suspense fallback={<Loader />}>
-          <Sun />
-          <StarSky />
-          <Provider store={store}>
-            {planets.map((planet) => (
-              <Planet dispatch={dispatch} planet={planet} textures={textures} key={planet.id}/>
-            ))}
-          </Provider>
-          <Lights />
-          <OrbitControls />
-        </Suspense>
-      </Canvas>
-      <InfoBar />
-      <Navigation />
+        <Canvas camera={{ position: [0, 20, 65], fov: 45 }}>
+          <Suspense fallback={<Loader />}>
+            <Provider store={store}>
+            <Sun />
+            <StarSky />
+              {planets.map((planet) => (
+                <Planet
+                  dispatch={dispatch}
+                  planet={planet}
+                  textures={textures}
+                  key={planet.id}
+                />
+              ))}
+            <Lights />
+            <OrbitControls />
+            </Provider>
+          </Suspense>
+        </Canvas>
+        <InfoBar />
+        <Navigation />
       </>
     );
   }
@@ -46,5 +51,6 @@ export default function App(props) {
 
 function Loader() {
   const { active, progress, errors, item, loaded, total } = useProgress();
-    return <Html center>{progress} % loaded</Html>;
+  console.log({active, progress, errors, item, loaded, total});
+  return <Html center>{progress} % loaded</Html>;
 }

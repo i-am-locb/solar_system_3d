@@ -1,0 +1,45 @@
+.warning {
+  background-image: url(../../Textures/BG.jpg);
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  text-shadow: #000000 1px 1px 1px;
+}
+
+.warningBlock {
+  font-family: "Chopsic";
+  margin: 15% 25%;
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.h1 {
+  text-decoration: none;
+  font-size: 75px;
+  margin: 0;
+  text-shadow: #000000 1px 1px 20px;
+}
+
+.text {
+  font-size: 25px;
+  text-shadow: #000000 1px 1px 20px;
+}
+
+.button {
+  font-family: "Chopsic";
+  border-radius: 10px;
+  color: white;
+  background: #414a4c;
+  width: 100px;
+  height: 50px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px 0 #414a4cb4;
+  transition: 0.5s;
+}
+
+.button:hover {
+  transform: translate(0, -5px);
+  box-shadow: 0 20px 40px 0 #414a4cb4;
+}

@@ -16,6 +16,7 @@
   -moz-overflow-scrolling: touch;
   -ms-overflow-scrolling: touch;
   -o-overflow-scrolling: touch;
+  text-align: center;
 }
 
 .infoBar {
@@ -32,4 +33,20 @@
 .bar::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.5);
+}
+h1 {
+  padding: 0 20px 0 10px;
+  font-family: "Chopsic";
+  text-decoration: underline;
+  text-shadow: #000000 1px 1px 20px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Chopsic";
+}
+a:hover{
+  text-shadow: #000000 1px 1px 20px;
 }

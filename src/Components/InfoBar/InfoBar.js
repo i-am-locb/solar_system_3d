@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "./InfoBar.module.css";
 
@@ -22,6 +21,6 @@ export default function InfoBar() {
     );
   }
   if (!zoomed) {
-    return <div></div>;
+    return <></>;
   }
 }
