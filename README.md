@@ -13,6 +13,6 @@
   
 ![Navigation](https://i.imgur.com/IX2nofa.jpg)  
   
-Так же при выборе планеты слева появится блок с информацией взятой с [Wikipedia Api](https://www.mediawiki.org/wiki/API:Query)  
+Так же при выборе планеты слева появится блок с информацией взятой с [Wikipedia API](https://www.mediawiki.org/wiki/API:Query)  
   
 ![InfoBar](https://i.imgur.com/giN9eYC.jpg) 
