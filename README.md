@@ -1,6 +1,6 @@
 # Модель солнечной системы  
 
-![Solar system model gif](https://github.com/i-am-locb/solar_system_3d/tree/master/src/Textures/Solar_system_model_gif.gif)  
+![Solar system model gif](https://github.com/i-am-locb/solar_system_3d/blob/master/src/Textures/Solar_system_model_gif.gif)  
 
 Здесь вы можете посмотреть на модель солнечной, системы созданной с помощью библиотеки react-three-fiber  
   
@@ -15,4 +15,4 @@
   
 Так же при выборе планеты слева появится блок с информацией взятой с [Wikipedia Api](https://www.mediawiki.org/wiki/API:Query)  
   
-![InfoBar](https://github.com/i-am-locb/solar_system_3d/tree/master/src/Textures/InfoBar.jpg) 
+![InfoBar](https://i.imgur.com/giN9eYC.jpg) 
