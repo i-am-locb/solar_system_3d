@@ -11,7 +11,7 @@
   
 На сайте реализованно приближение камеры к планетам, для удобства испаользуйте панель навигазии справа  
   
-![Navigation](https://github.com/i-am-locb/solar_system_3d/tree/master/src/Textures/Navigation.jpg)  
+![Navigation](https://i.imgur.com/IX2nofa.jpg)  
   
 Так же при выборе планеты слева появится блок с информацией взятой с [Wikipedia Api](https://www.mediawiki.org/wiki/API:Query)  
   
