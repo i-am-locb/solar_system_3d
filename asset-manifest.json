@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/solar_system_3d/static/css/main.f00b9573.chunk.css",
+    "main.js": "/solar_system_3d/static/js/main.5ae6d6e2.chunk.js",
+    "main.js.map": "/solar_system_3d/static/js/main.5ae6d6e2.chunk.js.map",
+    "runtime-main.js": "/solar_system_3d/static/js/runtime-main.0a6848bb.js",
+    "runtime-main.js.map": "/solar_system_3d/static/js/runtime-main.0a6848bb.js.map",
+    "static/js/2.01b1e88e.chunk.js": "/solar_system_3d/static/js/2.01b1e88e.chunk.js",
+    "static/js/2.01b1e88e.chunk.js.map": "/solar_system_3d/static/js/2.01b1e88e.chunk.js.map",
+    "index.html": "/solar_system_3d/index.html",
+    "static/css/main.f00b9573.chunk.css.map": "/solar_system_3d/static/css/main.f00b9573.chunk.css.map",
+    "static/js/2.01b1e88e.chunk.js.LICENSE.txt": "/solar_system_3d/static/js/2.01b1e88e.chunk.js.LICENSE.txt",
+    "static/media/Warning.module.css": "/solar_system_3d/static/media/BG.512ebece.jpg",
+    "static/media/index.css": "/solar_system_3d/static/media/Chopsic.afa6fa67.ttf",
+    "static/media/Earth.54672c1f.jpg": "/solar_system_3d/static/media/Earth.54672c1f.jpg",
+    "static/media/Jupiter.b3729a97.jpg": "/solar_system_3d/static/media/Jupiter.b3729a97.jpg",
+    "static/media/Mars.a4802994.jpg": "/solar_system_3d/static/media/Mars.a4802994.jpg",
+    "static/media/Mercury.b3bc4c35.jpg": "/solar_system_3d/static/media/Mercury.b3bc4c35.jpg",
+    "static/media/Neptune.6dd11266.jpg": "/solar_system_3d/static/media/Neptune.6dd11266.jpg",
+    "static/media/Saturn.afe61e83.jpg": "/solar_system_3d/static/media/Saturn.afe61e83.jpg",
+    "static/media/Sun.b34e6ead.jpg": "/solar_system_3d/static/media/Sun.b34e6ead.jpg",
+    "static/media/Uranus.428ad3f9.jpg": "/solar_system_3d/static/media/Uranus.428ad3f9.jpg",
+    "static/media/Venus.a2b5dff8.jpg": "/solar_system_3d/static/media/Venus.a2b5dff8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0a6848bb.js",
+    "static/js/2.01b1e88e.chunk.js",
+    "static/css/main.f00b9573.chunk.css",
+    "static/js/main.5ae6d6e2.chunk.js"
+  ]
+}
