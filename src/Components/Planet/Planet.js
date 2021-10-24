@@ -46,7 +46,7 @@ export default function Planet({
         zPlanet +
         equaRadius / planetScale +
         Math.sqrt(equaRadius / planetScale);
-      camera.position.lerp(new THREE.Vector3(xCamera, 0.1, zCamera), 0.05);
+      camera.position.lerp(new THREE.Vector3(xCamera, 0.1, zCamera), 0.01);
       camera.lookAt(xPlanet, 0, zPlanet);
       // camera.quaternion.set(xPlanet, 0.4, zPlanet, 1)
       // camera.quaternion.slerp(new THREE.Vector3(xPlanet, 1, zPlanet), 0.1);
